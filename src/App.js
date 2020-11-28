@@ -6,43 +6,6 @@ import Contacts from './components/Contacts';
 import AddContactForm from './components/AddContactForm';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      contacts: [
-        {
-          first_name: "James",
-          last_name: "Frimpong",
-          middle_name: "Kwame",
-          phone_number: '0244626767',
-          address: "Box Mc 1582, Takoradi",
-          email: "jfrimpong@yahoo.com",
-          type: "Friend",
-          id: "hhfttfjj"
-        },
-        {
-          first_name: "Princess",
-          last_name: "Mensah",
-          middle_name: "Linda",
-          phone_number: '0244626767',
-          address: "Box Mc 1582, Takoradi",
-          email: "jfrimpong@yahoo.com",
-          type: "Friend",
-          id: "hhfjjjhuh"
-        },
-        {
-          first_name: "James",
-          last_name: "Frimpong",
-          middle_name: "Kwame",
-          phone_number: '0244626767',
-          address: "Box Mc 1582, Takoradi",
-          email: "jfrimpong@yahoo.com",
-          type: "Friend",
-          id: "uuui"
-        }
-      ]
-    }
-  }
 
   addNewContact = (contact) => {
     contact.id=Math.random().toString()
@@ -75,8 +38,7 @@ class App extends Component {
           <Col>
           <h4>All Contacts</h4>
           <br/>
-            <Contacts 
-              contactsData={this.state.contacts} 
+            <Contacts
               deleteContact={this.deleteContact} 
               editContact={this.editContact} 
             />
