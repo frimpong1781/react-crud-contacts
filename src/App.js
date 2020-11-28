@@ -7,18 +7,18 @@ import AddContactForm from './components/AddContactForm';
 
 class App extends Component {
 
-  addNewContact = (contact) => {
-    contact.id=Math.random().toString()
-    this.setState({
-      contacts: [...this.state.contacts, contact]
-    })
-  }
+  // addNewContact = (contact) => {
+  //   contact.id=Math.random().toString()
+  //   this.setState({
+  //     contacts: [...this.state.contacts, contact]
+  //   })
+  // };
   deleteContact = (id) => {
     let undeletedContacts = this.state.contacts.filter((contact) => contact.id !== id);
     this.setState({
       contacts: undeletedContacts
     })
-  }
+  };
   editContact = (id, updatedContact) => {
     this.setState({
       contacts: this.state.contacts.map(contact => contact.id === id ? updatedContact : contact)
