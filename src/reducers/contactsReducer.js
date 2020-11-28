@@ -39,7 +39,8 @@ const contactsReducer = (state = initialState, action) => {
   switch (action.type) {
     // Do something here based on the different types of actions
     case "ADD_CONTACT":
-        return state;
+        console.log(action.payload)
+        return {...state, contacts: [...state.contacts, action.payload]};
   
     default:
           // If this reducer doesn't recognize the action type, or doesn't
