@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { Card, Col, Button, Modal } from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {deleteContact} from '../actions/contactsActions';
 import EditContactForm from './EditContactForm';
 
 const Contact = (props) => {
@@ -10,7 +12,7 @@ const Contact = (props) => {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        props.deleteContact(props.contactInfo.id);
+        props.removeContact(props.contactInfo.id);
     }
 
     return (
@@ -20,7 +22,7 @@ const Contact = (props) => {
                     <Modal.Title>Edit Contact</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <EditContactForm contactInfo={props.contactInfo} editContact={props.editContact} closeModal={handleClose} />
+                    <EditContactForm contactInfo={props.contactInfo} closeModal={handleClose} />
                 </Modal.Body>
             </Modal>
 
@@ -48,4 +50,8 @@ const Contact = (props) => {
     );
 };
 
-export default Contact;
+const mapDispatchToProps = {
+    removeContact: deleteContact
+}
+
+export default connect(null, mapDispatchToProps) (Contact);
