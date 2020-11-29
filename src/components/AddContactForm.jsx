@@ -62,7 +62,7 @@ class AddContactForm extends Component {
 
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Postal Address</Form.Label>
-                    <Form.Control type="textarea" placeholder="Enter address" name="address" value={this.state.address} onChange={this.handleChange} />
+                    <Form.Control type="textarea" placeholder="Enter postal address" name="address" value={this.state.address} onChange={this.handleChange} />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicEmail">
