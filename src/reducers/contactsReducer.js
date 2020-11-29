@@ -41,7 +41,16 @@ const contactsReducer = (state = initialState, action) => {
     case "ADD_CONTACT":
         console.log(action.payload)
         return {...state, contacts: [...state.contacts, action.payload]};
-  
+
+    case "DELETE_CONTACT":
+        let undeletedContacts = state.contacts.filter((contact) => contact.id !== action.payload);
+        return {...state, contacts: undeletedContacts}
+    
+    case "EDIT_CONTACT":
+       return {...state, contacts: state.contacts.map((contact =>
+        contact.id === action.payload.id ? action.payload : contact)
+        ),}
+
     default:
           // If this reducer doesn't recognize the action type, or doesn't
           // care about this specific action, return the existing state unchanged
