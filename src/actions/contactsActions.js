@@ -9,3 +9,19 @@ export const addContact = (newContact) => {
         payload: newContact
     }
 }
+
+// Action creator for deleting contact
+export const deleteContact = (contactId) => {
+    return {
+        type: "DELETE_CONTACT",
+        payload: contactId
+    }
+}
+
+// Action creator for editing contact
+export const editContact = (updatedContact) => {
+    return {
+        type: "EDIT_CONTACT",
+        payload: updatedContact
+    }
+}
