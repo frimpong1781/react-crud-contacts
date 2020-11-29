@@ -12,7 +12,6 @@ const Contacts = (props) => {
                         <Contact 
                           contactInfo={contact} 
                           key={contact.id} 
-                          deleteContact={props.deleteContact} 
                           editContact={props.editContact}
                         />
                     );
