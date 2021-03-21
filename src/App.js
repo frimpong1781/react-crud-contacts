@@ -4,26 +4,10 @@ import './App.css';
 import {Container, Row, Col } from 'react-bootstrap';
 import Contacts from './components/Contacts';
 import AddContactForm from './components/AddContactForm';
+import { logoutUser } from './actions/authActions';
+import {connect} from 'react-redux';
 
 class App extends Component {
-
-  // addNewContact = (contact) => {
-  //   contact.id=Math.random().toString()
-  //   this.setState({
-  //     contacts: [...this.state.contacts, contact]
-  //   })
-  // };
-  // deleteContact = (id) => {
-  //   let undeletedContacts = this.state.contacts.filter((contact) => contact.id !== id);
-  //   this.setState({
-  //     contacts: undeletedContacts
-  //   })
-  // };
-  // editContact = (id, updatedContact) => {
-  //   this.setState({
-  //     contacts: this.state.contacts.map(contact => contact.id === id ? updatedContact : contact)
-  //   })
-  // }
 
   render() {
   return (
@@ -37,7 +21,10 @@ class App extends Component {
           </Col>
           <Col>
           <h4>All Contacts</h4>
-          <br/>
+          <button 
+            className="btn btn-warning"
+            onClick={() => this.props.logoutUser()}>Logout</button>
+          <br/><br />
             <Contacts
               deleteContact={this.deleteContact} 
               editContact={this.editContact} 
@@ -50,4 +37,4 @@ class App extends Component {
 }
 }
 
-export default App;
+export default connect(null, { logoutUser }) (App);
