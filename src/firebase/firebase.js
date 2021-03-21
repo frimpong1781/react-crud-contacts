@@ -1,17 +1,20 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/auth';
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyArGovUJcoHE8sOw_xgf1nvG4byTbYSx7w",
-    authDomain: "react-contacts-list-85fdd.firebaseapp.com",
-    projectId: "react-contacts-list-85fdd",
-    storageBucket: "react-contacts-list-85fdd.appspot.com",
-    messagingSenderId: "462654718830",
-    appId: "1:462654718830:web:649284ca451e39a0a6b77f"
-  };
+  apiKey: "AIzaSyAeb_oPh918zX4Fo1ZvsTht1i714JE-RAc",
+  authDomain: "react-contact-list-dc8ff.firebaseapp.com",
+  projectId: "react-contact-list-dc8ff",
+  storageBucket: "react-contact-list-dc8ff.appspot.com",
+  messagingSenderId: "729228343801",
+  appId: "1:729228343801:web:92a6c21c79f1228864a528"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.firestore();
 
   export default firebase;
+
+  
